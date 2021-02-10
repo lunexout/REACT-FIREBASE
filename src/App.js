@@ -1,14 +1,20 @@
 import './App.css';
-import Content from './components/Content.jsx'
-import Navbar from './components/Navbar.jsx'
+import LoginFrom from './components/loginFrom/loginFrom'
+import LoginTeacher from './components/loginTeacher/loginTeacher'
+import LoginStudent from './components/loginStudent/loginStudent'
+import Teacher from './components/teacher/teacher'
 import {Route} from 'react-router-dom'
 
 
 function App() {
   return (
     <div className="App">
-        <Navbar></Navbar>
-        <Route path="/home" component={Content}/>
+      <div className="container text-center" style={{marginTop: "10%"}}>
+      <Route exact path="/" component={LoginFrom}/>
+      <Route path="/teacher/login" component={LoginTeacher}/>
+      <Route path="/student/login" component={LoginStudent}/>
+      <Route exact path="/teacher" component={Teacher}/>
+      </div>      
     </div>
   );
 }
